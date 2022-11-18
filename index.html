@@ -46,21 +46,33 @@
             .navbar .nav-link {
                 color: #fff !important;
             }
+            .slick-list{
+                height: 100vh !important;
+            }
+            .slick-track{
+                height: 100vh !important;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .slick-track .slick-slide {
+              height: auto;
+            }
         </style>
     </head>
     <body>
         <!--Main Navigation-->
-        <header style="height: 100vh">
-            <div class="wrapper" style="background-color: #1e3824">
-                <div id="carousel"></div>
+        <header style="height: 100vh; background-color: #1a1a1a;">
+            <div class="h-100">
+                <div id="carousel" class="h-100"></div>
             </div>
 
             <nav
                 class="d-block min navbar navbar-expand navbar-dark shadow fixed-bottom"
                 style="
                     z-index: 20000;
-                    background-color: #d8bfa4;
-                    color: #1e3824;
+                    background-color: #1a1a1a;
+                    color: #eee0d3;
                 "
             >
                 <div
@@ -76,7 +88,7 @@
                                 ><i
                                     class="text-dark fab fa-facebook fa-2x"
                                     aria-hidden="true"
-                                    style="color: #1e3824 !important"
+                                    style="color: #eee0d3 !important"
                                 ></i
                             ></a>
                         </li>
@@ -89,7 +101,7 @@
                                 ><i
                                     class="text-dark fab fa-whatsapp fa-2x"
                                     aria-hidden="true"
-                                    style="color: #1e3824 !important"
+                                    style="color: #eee0d3 !important"
                                 ></i
                             ></a>
                         </li>
@@ -100,7 +112,7 @@
                             ><i
                                 class="text-dark fab fa-instagram fa-2x"
                                 aria-hidden="true"
-                                style="color: #1e3824 !important"
+                                style="color: #eee0d3 !important"
                             ></i
                         ></a>
                         <li class="nav-item"></li>
@@ -123,11 +135,9 @@
         <script>
             let carousel = document.querySelector("#carousel");
 
-            for (let i = 1; i <= 8; i++) {
+            for (let i = 1; i <= 14; i++) {
                 let img = document.createElement("img");
                 img.setAttribute("src", `./img/menu-${i}.jpeg`);
-                img.style.height = "96vh";
-                img.style.width = "100%";
                 carousel.appendChild(img);
             }
 
@@ -139,6 +149,7 @@
                 adaptiveHeight: true,
                 prevArrow: false,
                 nextArrow: false,
+                mobileFirst: true,
             });
         </script>
 
